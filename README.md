@@ -4,8 +4,8 @@
 Many open source teams/projects have not enough time on their hands to do proper support/documentation.
 With enough active users it is easy to offload triage of issues and documentation improvements to community.
 
-Many issues are not actionable because they are not clear. Do not contain a clear repro. Investigating thise takes time. Ant teams time is better spent on developing the product. That does hurt adoption though. And image in general. It is usually the case that there are enough people willing to donate their time to improve the situation. Stackoverflow clearly is an example.  
-Mmost people just don't know how to contribute. Shy. Think that it is hard etc.
+Many issues are not actionable because they are not clear. Do not contain a clear repro. Investigating these takes time. And teams time is better spent on developing the product. That does hurt adoption though. And image in general. It is usually the case that there are enough people willing to donate their time to improve the situation. Stackoverflow clearly is an example.  
+Most people just don't know how to contribute. Shy. Think that it is hard etc.
 
 A tool that helps get that flow going could affect the whole industry.
 One issue at a time. Make them actionable. So the team can take action. Better yet somebody else can create a PR.
