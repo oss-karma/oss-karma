@@ -28,7 +28,7 @@
 Idea is to allow community members to get involved.. a lot of documents describe that code is not the only way to contribute.
 a place where one can easily start ones journey is not provided..
 
-_chose a project_ is not the same as _here are some projects in need of your help_
+_choose a project_ is not the same as _here are some projects in need of your help_
 
 
 
