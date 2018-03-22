@@ -78,4 +78,4 @@ Thumbs.db
 !.vscode/extensions.json
 
 # Compiled files
-scripts
+dist

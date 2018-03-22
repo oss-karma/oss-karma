@@ -2,9 +2,13 @@
   "name": "oss-karma",
   "description": "An Aurelia client application.",
   "version": "0.1.0",
+  "homepage": "https://oss-karma.firebaseapp.com/",
+  "bugs": {
+    "url": "https://github.com/oss-karma/oss-karma/issues"
+  },
   "repository": {
-    "type": "???",
-    "url": "???"
+    "type": "git",
+    "url": "https://github.com/oss-karma/oss-karma"
   },
   "license": "MIT",
   "dependencies": {
