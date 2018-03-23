@@ -1,22 +1,43 @@
 import { autoinject } from 'aurelia-dependency-injection';
+import { computedFrom } from 'aurelia-binding';
 import { FirebaseService } from './services/firebase-service';
+import { Store } from 'aurelia-store';
+
+import firebase from './common/firebase';
+
+import { LOAD_PROJECTS, SET_USER } from './store/constants';
+import { loadProjects, setUser } from './store/actions';
+import { State } from './store/state';
 
 @autoinject()
 export class App {
-  db: any;
+  private state: State;
+
   message = 'Hello OSS World!';
-  projectsLoaded = false;
-  projects = []
 
-  constructor(private firebaseService: FirebaseService) {
+  constructor(private firebaseService: FirebaseService, private store: Store<State>) {
+    this.store.state.subscribe(
+      (state: State) => this.state = state
+    );
 
+    this.setupStore();
+
+    firebase.auth().onAuthStateChanged(user => {
+      this.store.dispatch(setUser, user);
+    });
+  }
+
+  setupStore() {
+    this.store.registerAction(SET_USER, setUser);
+    this.store.registerAction(LOAD_PROJECTS, loadProjects);
   }
 
   async activate() {
-    const data = await this.firebaseService.getCollection('projects');
+    await this.store.dispatch(loadProjects);
+  }
 
-    data.docs.forEach(d => this.projects.push(d.data()));
-
-    this.projectsLoaded = true;
+  @computedFrom('state.projects')
+  get projects() {
+    return this.state.projects;
   }
 }
