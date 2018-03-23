@@ -11,7 +11,7 @@ Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
-    .basicConfiguration();
+    .standardConfiguration();
   //  .standardConfiguration()
   //  .feature(PLATFORM.moduleName('resources/index'));
 
