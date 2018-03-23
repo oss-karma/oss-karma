@@ -4,7 +4,6 @@ import { State } from './state';
 
 import { FirebaseService } from '../services/firebase-service';
 
-const API: FirebaseService = Container.instance.get(FirebaseService);
 const STORE: Store<State> = Container.instance.get(Store);
 
 export async function setUser(state, user) {
