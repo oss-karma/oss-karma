@@ -89,7 +89,7 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
         }) : ['style-loader', ...scssRules]
       },
       { test: /\.html$/i, loader: 'html-loader' },
-      { test: /\.tsx?$/, loader: "ts-loader" },
+      { test: /\.tsx?$/, loader: "ts-loader" , options: { configFile : 'tsconfig.webpack.json' }},
       { test: /\.json$/i, loader: 'json-loader' },
       // use Bluebird as the global Promise implementation:
       { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: 'expose-loader?Promise' },

@@ -6,8 +6,6 @@ import { PLATFORM } from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
 import { initialState } from './store/state';
 
-import 'font-awesome/scss/font-awesome.scss';
-import 'assets/styles/application.scss';
 
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
