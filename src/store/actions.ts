@@ -3,7 +3,6 @@ import { Store } from 'aurelia-store';
 import { State } from './state';
 
 import firebase from '../common/firebase';
-import { FirebaseService } from '../services/firebase-service';
 
 const DB: firebase.firestore.Firestore = firebase.firestore();
 const STORE: Store<State> = Container.instance.get(Store);
