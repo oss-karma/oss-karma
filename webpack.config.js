@@ -23,7 +23,18 @@ const cssRules = [
   { loader: 'css-loader' },
   {
     loader: 'postcss-loader',
-    options: { plugins: () => [require('autoprefixer')({ browsers: ['last 2 versions'] })]}
+    options: { plugins: () => [require('autoprefixer')({ browsers: ['last 2 versions'] })] }
+  }
+]
+
+const scssRules = [
+  { loader: 'css-loader' },
+  {
+    loader: 'postcss-loader',
+    options: { plugins: () => [require('autoprefixer')({ browsers: ['last 2 versions'] })] }
+  },
+  {
+    loader: 'sass-loader'
   }
 ];
 
@@ -70,6 +81,13 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
         // because Aurelia would try to require it again in runtime
         use: cssRules
       },
+      {
+        test: /\.scss$/,
+        use: extractCss ? ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: scssRules,
+        }) : ['style-loader', ...scssRules]
+      },
       { test: /\.html$/i, loader: 'html-loader' },
       { test: /\.tsx?$/, loader: "ts-loader" },
       { test: /\.json$/i, loader: 'json-loader' },
@@ -91,7 +109,11 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
   plugins: [
     new AureliaPlugin(),
     new ProvidePlugin({
-      'Promise': 'bluebird'
+      'Promise': 'bluebird',
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'window.jQuery': 'jquery',
+      'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!isomorphic-fetch'
     }),
     new ModuleDependenciesPlugin({
       'aurelia-testing': [ './compile-spy', './view-spy' ]
