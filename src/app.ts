@@ -1,6 +1,7 @@
+import { PLATFORM } from 'aurelia-pal';
 import { autoinject } from 'aurelia-dependency-injection';
 import { computedFrom } from 'aurelia-binding';
-import { FirebaseService } from './services/firebase-service';
+import { RouterConfiguration, Router } from 'aurelia-router';
 import { Store } from 'aurelia-store';
 
 import firebase from './common/firebase';
@@ -11,11 +12,10 @@ import { State } from './store/state';
 
 @autoinject()
 export class App {
+  private router: Router;
   private state: State;
 
-  message = 'Hello OSS World!';
-
-  constructor(private firebaseService: FirebaseService, private store: Store<State>) {
+  constructor(private store: Store<State>) {
     this.store.state.subscribe(
       (state: State) => this.state = state
     );
@@ -32,12 +32,12 @@ export class App {
     this.store.registerAction(LOAD_PROJECTS, loadProjects);
   }
 
-  async activate() {
-    await this.store.dispatch(loadProjects);
-  }
+  configureRouter(config: RouterConfiguration, router: Router) {
+    config.title = 'OSS Karma';
+    config.map([
+      { name: 'home', route: [''], moduleId: PLATFORM.moduleName('./routes/home', 'name'), nav: false, title: 'Home' }
+    ]);
 
-  @computedFrom('state.projects')
-  get projects() {
-    return this.state.projects;
+    this.router = router;
   }
 }

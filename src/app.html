@@ -1,7 +1,3 @@
 <template>
-  <h1>${message}</h1>
-  <div if.bind="!projects.length">loading projects..</div>
-  <ul else>
-    <li repeat.for="p of projects">${p.Name}</li>
-  </ul>
+  <router-view class="main-content"></router-view>
 </template>
