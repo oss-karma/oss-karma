@@ -10,7 +10,7 @@ Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
-    .basicConfiguration()
+    .basicConfiguration();
   //  .standardConfiguration()
   //  .feature(PLATFORM.moduleName('resources/index'));
 
@@ -20,6 +20,8 @@ export function configure(aurelia: Aurelia) {
 
   // Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-html-import-template-loader'));
+
+  aurelia.use.plugin(PLATFORM.moduleName('aurelia-store'), { initialState });
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

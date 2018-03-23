@@ -683,7 +683,7 @@ aurelia-cli@^0.33.0:
     rfc6902 "^1.2.2"
     semver "^5.3.0"
 
-aurelia-dependency-injection@^1.0.0, aurelia-dependency-injection@^1.2.0:
+aurelia-dependency-injection@^1.0.0, aurelia-dependency-injection@^1.2.0, aurelia-dependency-injection@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/aurelia-dependency-injection/-/aurelia-dependency-injection-1.3.2.tgz#5f9ca5dede6a1ccc72a0838c980df3dfe7918756"
   dependencies:
@@ -696,7 +696,7 @@ aurelia-event-aggregator@^1.0.0:
   dependencies:
     aurelia-logging "^1.0.0"
 
-aurelia-framework@^1.0.0:
+aurelia-framework@^1.0.0, aurelia-framework@^1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/aurelia-framework/-/aurelia-framework-1.1.5.tgz#fd97d281c02d35bb98032830b0731ec3d2a6c1d7"
   dependencies:
@@ -772,7 +772,7 @@ aurelia-logging-console@^1.0.0:
   dependencies:
     aurelia-logging "^1.0.0"
 
-aurelia-logging@^1.0.0, aurelia-logging@^1.2.0:
+aurelia-logging@^1.0.0, aurelia-logging@^1.2.0, aurelia-logging@^1.3.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/aurelia-logging/-/aurelia-logging-1.4.0.tgz#04fb7aa74015593f7a15b225beeba07b7d14dcd5"
 
@@ -795,7 +795,7 @@ aurelia-pal-nodejs@^1.0.0-beta.3.2.0:
     aurelia-pal "^1.1.0"
     jsdom "~11.5.1"
 
-aurelia-pal@^1.0.0, aurelia-pal@^1.1.0, aurelia-pal@^1.1.1, aurelia-pal@^1.3.0, aurelia-pal@^1.4.0:
+aurelia-pal@^1.0.0, aurelia-pal@^1.1.0, aurelia-pal@^1.1.1, aurelia-pal@^1.3.0, aurelia-pal@^1.4.0, aurelia-pal@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/aurelia-pal/-/aurelia-pal-1.7.0.tgz#443fd75c72a0b3e1daa3181f655ea770a579dd88"
 
@@ -831,6 +831,16 @@ aurelia-router@^1.5.0:
     aurelia-logging "^1.0.0"
     aurelia-path "^1.0.0"
     aurelia-route-recognizer "^1.0.0"
+
+aurelia-store@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/aurelia-store/-/aurelia-store-0.20.0.tgz#f3f03c6f808acda6e55d9395c6ede62d20ba0378"
+  dependencies:
+    aurelia-dependency-injection "^1.3.1"
+    aurelia-framework "^1.1.2"
+    aurelia-logging "^1.3.1"
+    aurelia-pal "^1.7.0"
+    rxjs "^5.5.2"
 
 aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0:
   version "1.2.1"
